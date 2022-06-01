@@ -7,10 +7,10 @@ const palettesService = new PalettesServices();
 
 //a função do controller recebe o request e o response
 class PaletteControllers {
-  getAllPalettes(req, res) {
+  async getAllPalettes(req, res) {
     try {
       //a função getAllPalettes: crio uma variável que recebe o new PalettesServices e chama dentro da classe a função getAllPalettes
-      const palettes = palettesService.getAllPalettes();
+      const palettes = await palettesService.getAllPalettes();
 
       //res.send(palettes); manda a response para o cliente das informações contidas na palettes
       res.send(palettes);
@@ -19,19 +19,19 @@ class PaletteControllers {
     }
   }
 
-  getByIdPalettes(req, res) {
-    const id = Number(req.params.id); //o req traz informações do body
+  async getByIdPalettes(req, res) {
+    const id = req.params.id; //o req traz informações do body
 
-    const palettes = palettesService.findByIdPalette(id); //a variável está indo lá no meu service, chamando a função findByIdPalette, a função recebe o req.params.id que veio do param
+    const palettes = await palettesService.findByIdPalette(id); //a variável está indo lá no meu service, chamando a função findByIdPalette, a função recebe o req.params.id que veio do param
 
     res.send(palettes); //envio o res.send(palettes) para o cliente
   }
 
-  createNewPalette(req, res) {
+  async createNewPalette(req, res) {
     const { flavor, description, img, price } = req.body; //acrescentando a cada variável a informação que vem do req.body em sua respectiva
 
     try {
-      const newPalette = palettesService.createNewPalette(
+      const newPalette = await palettesService.createNewPalette(
         flavor,
         description,
         img,
@@ -40,15 +40,17 @@ class PaletteControllers {
 
       res.status(201).send(newPalette);
     } catch (error) {
-      res.status(error.status).send(error.message);
+      if (error.code === 11000) {
+        res.status(400).send("Já cadastrado");
+      }
     }
   }
 
-  updatePalette(req, res) {
+  async updatePalette(req, res) {
     const { flavor, description, img, price } = req.body;
-    const id = Number(req.params.id);
+    const id = req.params.id;
 
-    const updatedPalette = palettesService.updatePalette({
+    const updatedPalette = await palettesService.updatePalette({
       flavor,
       description,
       img,
@@ -59,12 +61,12 @@ class PaletteControllers {
     res.status(200).send(updatedPalette);
   }
 
-  deletePalette(req, res) {
-    const id = Number(req.params.id);
+  async deletePalette(req, res) {
+    const id = req.params.id;
 
-    palettesService.deletePalette(id);
+   const palette = await palettesService.deletePalette(id);
 
-    res.sendStatus(204);
+    res.status(200).send(palette);
   }
 }
 

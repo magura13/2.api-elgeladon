@@ -1,0 +1,20 @@
+[
+    {
+      "flavor": "Açaí com Leite Condensado",
+      "description": "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
+      "img": "assets/images/acai-com-leite-condensado.PNG",
+      "price": 10.0
+    },
+    {
+      "flavor": "Banana com Nutella",
+      "description": "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
+      "img": "assets/images/banana-com-nutella.PNG",
+      "price": 10.0
+    },
+    {
+      "flavor": "Chocolate Belga",
+      "description": "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
+      "img": "assets/images/chocolate-belga.PNG",
+      "price": 7.0
+    }
+  ]

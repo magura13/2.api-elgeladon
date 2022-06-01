@@ -2,18 +2,11 @@ import express from 'express'; //importando a biblioteca do express na variável
 import cors from 'cors'; //importando a cors
 import palettesRouter from './routes/palettes.routes';
 
-
-
-
 const app = express(); //insânciando o Express
 
 app.use(express.json()); //informando a minha aplicação que sempre deverá se comunicar através do JSON
 app.use(cors()); //informando a minha aplicação as configurações cors
 app.use('/palettes', palettesRouter);//dessa forma consigo concentrar todas as requisições referentes ao palettes
-
-app.get('/', (req, res) => {
-  return res.send('Hello World!');
-});
 
 export default app;
 // app.get('/palettes/getAllPalettes', (req, res) => {
