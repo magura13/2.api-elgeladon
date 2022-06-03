@@ -41,7 +41,7 @@ class PaletteControllers {
       res.status(201).send(newPalette);
     } catch (error) {
       if (error.code === 11000) {
-        res.status(400).send("Já cadastrado");
+        res.status(400).send('Já cadastrado');
       }
     }
   }
@@ -50,21 +50,27 @@ class PaletteControllers {
     const { flavor, description, img, price } = req.body;
     const id = req.params.id;
 
-    const updatedPalette = await palettesService.updatePalette({
-      flavor,
-      description,
-      img,
-      price,
-      id,
-    });
+    try {
+      const updatedPalette = await palettesService.updatePalette({
+        flavor,
+        description,
+        img,
+        price,
+        id,
+      });
 
-    res.status(200).send(updatedPalette);
+      res.status(200).send(updatedPalette);
+    } catch (error) {
+      if (error.code === 11000) {
+        res.status(400).send('Já cadastrado');
+      }
+    }
   }
 
   async deletePalette(req, res) {
     const id = req.params.id;
 
-   const palette = await palettesService.deletePalette(id);
+    const palette = await palettesService.deletePalette(id);
 
     res.status(200).send(palette);
   }

@@ -43,17 +43,21 @@ class PalettesServices {
     //é criado o objeto updatedPalette
     const updatedPalette = { flavor, description, img, price };
 
-    await Palette.updateOne({ _id: id }, updatedPalette);
+    try {
+      await Palette.updateOne({ _id: id }, updatedPalette);
 
-    const palette = await Palette.findById(id);
+      const palette = await Palette.findById(id);
 
-    return palette;
+      return palette;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async deletePalette(id) {
-  const palette =   await Palette.findByIdAndDelete(id);
+    const palette = await Palette.findByIdAndDelete(id);
 
-  return palette;
+    return palette;
   }
 }
 
