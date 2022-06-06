@@ -36,7 +36,7 @@ class UserControllers {
       res.status(201).send(newUser);
     } catch (error) {
       if (error.code === 11000) {
-        res.status(400).send('Already registered');
+        res.status(400).send('Email Already registered');
       }
     }
   }
