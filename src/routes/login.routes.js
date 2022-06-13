@@ -5,6 +5,6 @@ import verifyTokenMiddleware from '../middlewares/verifyToken.middleware';
 const loginRouter = new Router();
 const loginControllers = new LoginControllers;
 
-loginRouter.post('/makeLogin', verifyTokenMiddleware, loginControllers.makeLogin);
+loginRouter.post('/makeLogin', loginControllers.makeLogin);
 
 export default loginRouter;

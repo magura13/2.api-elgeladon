@@ -1,7 +1,7 @@
 import app from './app';
 import { connectToDatabase } from './database';
 
-const port = 3000; //porta para o servidor
+const port = 8080; //porta para o servidor
 
 app.listen(port, () => {
   connectToDatabase();
@@ -9,3 +9,4 @@ app.listen(port, () => {
 });
 
 //prática de fábrica API para n0,
+

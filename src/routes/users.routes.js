@@ -2,6 +2,7 @@ import { Router } from 'express';
 import UserControllers from '../controllers/users.controllers';
 import verifyInfosUsersmiddleware from '../middlewares/verifyInfosUsers.middleware';
 import verifyIdUsersMiddleware from '../middlewares/verifyIdUsers.middlewares';
+import verifyTokenMiddleware from '../middlewares/verifyToken.middleware';
 
 const usersControllers = new UserControllers();
 const usersRouter = Router();
@@ -25,6 +26,7 @@ usersRouter.put(
 );
 usersRouter.delete(
   '/deleteUser/:id',
+  verifyTokenMiddleware,
   verifyIdUsersMiddleware,
   usersControllers.deleteUser,
 );

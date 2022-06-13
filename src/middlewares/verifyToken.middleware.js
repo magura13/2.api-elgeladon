@@ -5,12 +5,12 @@ const verifyTokenMiddleware = (req, res, next) => {
   const token = req.headers.authorization;
 
   if (token === undefined) {
-    res.status(401).send({ message: 'Token not found' });
+    return res.status(401).send({ message: 'Token not found' });
   }
   //verificar se o token é valido
   jwt.verify(token, 'secret-token', (error, decoded) => {
     if (error) {
-      res.status(401).send({ message: 'Token invalid' });
+     return res.status(401).send({ message: 'Token invalid' });
     }
 
     next();
