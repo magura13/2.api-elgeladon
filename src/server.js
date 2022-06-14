@@ -2,7 +2,9 @@ import 'dotenv/config';
 import app from './app';
 import { connectToDatabase } from './database';
 
-app.listen(process.env.PORT, () => {
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
   connectToDatabase();
-  console.log(`Application is listening on http://localhost:${process.env.PORT}`);
+  console.log(`Application is listening on http://localhost:${port}`);
 });
