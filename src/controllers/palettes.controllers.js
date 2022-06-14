@@ -1,4 +1,4 @@
-import PalettesServices from '../services/palettes.services';
+import PalettesServices from '../services/palettes.services.js';
 //importando a classe com os services
 //o controller vai chamar o services para fazer a rota
 

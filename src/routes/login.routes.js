@@ -1,6 +1,5 @@
 import {Router} from 'express';
-import LoginControllers from '../controllers/login.controllers';
-import verifyTokenMiddleware from '../middlewares/verifyToken.middleware';
+import LoginControllers from '../controllers/login.controllers.js';
 
 const loginRouter = new Router();
 const loginControllers = new LoginControllers;

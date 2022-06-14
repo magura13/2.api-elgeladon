@@ -1,9 +1,9 @@
 import { Router } from 'express';
 //importando o router direto de dentro do express.
 //o Router é uma classe precisará ser instânciado
-import PaletteControllers from '../controllers/palettes.controllers';
-import verifyIdPaletteMiddleware from '../middlewares/verifyIdPalette.middleware';
-import verifyInfosPalettesMiddleware from '../middlewares/verifyInfosPalettes.middlewares';
+import PaletteControllers from '../controllers/palettes.controllers.js';
+import verifyIdPaletteMiddleware from '../middlewares/verifyIdPalette.middleware.js';
+import verifyInfosPalettesMiddleware from '../middlewares/verifyInfosPalettes.middlewares.js';
 
 const palettesControllers = new PaletteControllers(); //instânciado o palette controllers, tendo assim acesso aos métodos
 const palettesRouter = Router();

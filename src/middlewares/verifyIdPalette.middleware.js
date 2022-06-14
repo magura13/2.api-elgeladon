@@ -1,4 +1,4 @@
-import Palette from '../models/palettes.model';
+import Palette from '../models/palettes.model.js';
 import mongoose from 'mongoose';
 
 const verifyIdPaletteMiddleware = async (req, res, next) => {

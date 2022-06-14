@@ -1,5 +1,4 @@
-import PalettesServices from '../services/palettes.services';
-import UsersServices from '../services/user.services';
+import UsersServices from '../services/user.services.js';
 
 const usersService = new UsersServices();
 

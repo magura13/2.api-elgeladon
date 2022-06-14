@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import UserControllers from '../controllers/users.controllers';
-import verifyInfosUsersmiddleware from '../middlewares/verifyInfosUsers.middleware';
-import verifyIdUsersMiddleware from '../middlewares/verifyIdUsers.middlewares';
-import verifyTokenMiddleware from '../middlewares/verifyToken.middleware';
+import UserControllers from '../controllers/users.controllers.js';
+import verifyInfosUsersmiddleware from '../middlewares/verifyInfosUsers.middleware.js';
+import verifyIdUsersMiddleware from '../middlewares/verifyIdUsers.middlewares.js';
+import verifyTokenMiddleware from '../middlewares/verifyToken.middleware.js';
 
 const usersControllers = new UserControllers();
 const usersRouter = Router();

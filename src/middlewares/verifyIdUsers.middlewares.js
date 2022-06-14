@@ -1,4 +1,4 @@
-import User from '../models/users.model';
+import User from '../models/users.model.js';
 import mongoose from 'mongoose';
 
 const verifyIdUsersMiddleware = async (req, res, next) => {

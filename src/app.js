@@ -1,8 +1,8 @@
 import express from 'express'; //importando a biblioteca do express na variável express
 import cors from 'cors'; //importando a cors
-import palettesRouter from './routes/palettes.routes';
-import usersRouter from './routes/users.routes'
-import loginRouter from './routes/login.routes';
+import palettesRouter from './routes/palettes.routes.js';
+import usersRouter from './routes/users.routes.js'
+import loginRouter from './routes/login.routes.js';
 
 const app = express(); //insânciando o Express
 

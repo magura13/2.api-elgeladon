@@ -1,4 +1,4 @@
-import Palette from '../models/palettes.model'; //exportando como
+import Palette from '../models/palettes.model.js'; //exportando como
 
 //criando como classe somente por opção e forma de trabalho, essa classe vai servir somente para ter os métodos que vão criar a lógica da paleta. Lembrando que os métodos de uma classe são funções
 class PalettesServices {

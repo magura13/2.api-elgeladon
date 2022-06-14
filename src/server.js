@@ -1,6 +1,6 @@
 import 'dotenv/config';
-import app from './app';
-import { connectToDatabase } from './database';
+import app from './app.js';
+import { connectToDatabase } from './database/index.js';
 
 const port = process.env.PORT || 8080;
 
